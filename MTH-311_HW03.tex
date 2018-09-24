@@ -1,0 +1,118 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#03}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[2.3.3] Prove or Disprove: if $a | (b+c)$, then either $a | b$ or $a | c$.\\
+		Let $a=2,b=1,$ and $c=1$. Then,
+			\[a|(b+c) \text{ as } 2 | (1+1)=2\]
+		But $2\not|$ 1. Therefore by counterexample the original statement must be false.
+	\item[2.3.5] Prove that for any integer $a$, one of the integers $a, a+2,a+4$ is divisible by 3.
+		\begin{proof}
+			From the division algorithm we have $a=3n+0,a=3n+1,a=3n+2$ for some $n \in \Z$.
+			\begin{enumerate}
+				\item [Case 1:] Let $a=3n+0$. Then, a is divisible by 3 by definition.
+				\item [Case 2:] Let $a=3n+1$. Then, 
+					\[a+2 = 3n+3 = 3(n+1)\]
+					Thus, $a+2$ is divisible by 3.
+				\item[Case 3:] Let $a=3n+2$. Then,
+					\[a+4=3n+6=3(n+2)\]
+					Thus, $a+4$ is divisible by 3. 
+			\end{enumerate}
+			Therefore, for any integer $a$, one of the integers of the form $a, a+2,a+4$ is divisible by 3.
+		\end{proof}
+	\item[2.3.9] Establish that the difference of two consecutive cubes is never divisible by 2.
+		\begin{proof}
+			Let the difference of two consecutive cubes be represented by $(n+1)^3-(n)^3$ for some $n\in \Z$.
+			As we know the two cubes are consecutive, one of the cubes must be even.
+			\begin{enumerate}
+				\item [Case 1:] The smaller cube is even. Then, $n$ is even. That is to say, there exists a $k\in\Z$ such that $n=2k$ and $n+1=2k+1$. Notice.
+				\begin{align*}
+					(n+1)^3-(n)^3 &= (2k+1)^3-(2k)^3 \\
+								  &= 12k^2+6k+1 \\
+								  &= 2(6k^2+3k)+1\\
+								  \text{ Let } s:=6k^2+3k \\
+								  &= 2s+1 \quad \text{ which is odd}			 	
+				\end{align*}
+				\item[Case 2:] The smaller cube is odd. Then, $n$ is odd. That is to say, there exists a $k\in\Z$ such that $n=2k+1$ and $n+1=2k+2$. Notice.
+				\begin{align*}
+					(n+1)^3-(n)^3 &= (2k+2)^3-(2k+1)^3 \\
+								  &= 12k^2+18k+7 \\
+								  &= 2(6k^2+9k+3)+1\\
+								  \text{ Let } s:=6k^2+9k+3 \\
+								  &= 2s+1 \quad \text{ which is odd}			 	
+				\end{align*}
+			\end{enumerate}
+			As we have shown that in both cases the result from the difference of two consecutive cubes is odd. Therefore the difference of two consecutive cubes is never divisible by 2.
+		\end{proof}
+	\item[2.3.15] If $a$ and $b$ are integers, not both of which are zero, prove that $\gcd(2a-3b,4a-5b)$ divides $b$; hence, $\gcd(2a+3,4a+5) = 1$.
+		\begin{proof}
+			$\gcd(2a-3b,4a-5b) = x(2a-3b) + y(4a-5b)$ for some $x,y \in\Z$. Let $x=-2$ and $y=1$. Then,
+				\[-2(2a-3b) + 1(4a-5b) = -4a+6b+4a-5b = b\]
+			Thus, $\gcd(2a-3b,4a-5b)|b$.\\
+			\\
+			Continuing, \\
+			$\gcd(2a+3,4a+5) = x(2a+3) + y(4a+5) = 1$ for some $x,y\in\Z$. Let $x=2$ and $y=-1$. Then,
+				\[2(2a+3)-1(4a+5) = 4a+6-4a+5 = 1\]
+			As $\gcd(2a+3,4a+5)|1 \Rightarrow \gcd(2a+3,4a+5) = 1$\\
+			\\
+			Therefore, both $\gcd(2a-3b,4a-5b)$ divides $b$; hence, $\gcd(2a+3,4a+5) = 1$ are true.
+		\end{proof}
+	\item[2.3.17] Prove that the expression $(3n)!/(3!)^n$ is an integer for all $n\geq 0$.
+		\begin{proof}
+			In the case of $n=1$, We have $3!/3!^1 = 6/6 = 1$. So, the expression hold true for $n=1$. Assume that the expression holds true for some $k\geq0$, that is $n=k$, $(3k)!/(3!)^k$. We will now show that the expression holds true for $k+1$. We see that
+			\begin{align*}
+				\frac{[3(k+1)]!}{(3!)^{k+1}} &= \frac{(3k+3)!}{(3!)^k3!}\\
+											 &= \frac{(3k)!}{3!^k}\cdot\frac{(3k+3)(3k+2)(3k+1)}{6}\\
+											 \text{Let } q:=\frac{(3k)!}{3!^k}\\
+											 &= q\cdot\frac{(k+1)(3k+2)(3k+1)}{2} \\
+			\end{align*}
+			As $q$ must be an integer, we need to prove that $\frac{(k+1)(3k+2)(3k+1)}{2}$ is also an integer.
+			\begin{enumerate}
+				\item[Case 1:] $k$ is even. Then, for some $r\in\Z, k=2r \Rightarrow 3k+2=6r+2=2(3r+1)$. Thus, $ 2 | 3k+2$.
+				\item[Case 2:] $k$ is odd. Then, for some $r\in\Z, k=2r+1 \Rightarrow k+1=2r+2=2(r+1)$. Thus, $ 2 | k+1$.
+			\end{enumerate}
+			Thus, $\frac{(k+1)(3k+2)(3k+1)}{2}$ is an integer. Which means $\frac{[3(k+1)]!}{(3!)^{k+1}}$ must also be an integer.
+			Therefore, by mathematical induction, $(3n)!/(3!)^n$ is an integer for all $n\geq 0$.
+		\end{proof}
+	\item[2.3.23] If $a | bc$ show that $a | \gcd(a,b) \gcd(a,c)$
+    	\begin{proof}
+    		Assume $a | bc$. Then, $bc = aq$ for some $q\in\Z$. By definition, $\gcd(a,b)=am+bn$ for some $m,n\in\Z$ and $\gcd(a,c)=ar+bs$ for some $r,s\in\Z$. Then,
+    			\begin{align*}
+    				\gcd(a,b)\gcd(a,c)&=(am+bn)(ar+bs)\\
+    								  &=a^2mr+acms+abrn+bcns\\
+    								  &=a^2mr+acms+abrn+aqns, \text{ as } bc = aq\\
+    								  &= a(amr+cms+brn+qns)
+    			\end{align*} 
+    			Therefore, $a | \gcd(a,b)\gcd(a,c)$
+    	\end{proof}
+        
+\end{enumerate}
+
+
+\end{document}
