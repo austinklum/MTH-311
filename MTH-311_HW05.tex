@@ -1,0 +1,78 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#04}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[2.4.2b] Use the Euclidean Algorithm to obtain integers $ x $ and $ y $ that satisfy $\gcd(24,138)=24x+138y$\\
+	Using the Euclidean Algorithm, observe.
+		\begin{align*}
+			138 &= 5(24)+18\\
+			24 &= 1(18)+6\\
+			18 &= 3(6)+0
+		\end{align*}
+		Working these results in reverse, notice.
+		\begin{align*}
+			6 &= 24 - 18(1)\\
+			  &= 24 - 24(138-15)\\
+			  &= 6(24)-1(138)
+		\end{align*}
+		Thus, $ x=6 $ and $ y= -1 $.
+	\item[2.4.2c] Use the Euclidean Algorithm to obtain integers $ x $ and $ y $ that satisfy $\gcd(119,272)=119x+272y$\\	
+		Using the Euclidean Algorithm, observe.
+		\begin{align*}
+			272 &= 2(119)+34\\
+			119 &= 3(34)+17\\
+			34 &= 2(17)+0
+		\end{align*}
+		Working these results in reverse, notice.
+		\begin{align*}
+			 17	&= 119 - 3(34)\\
+				&= 119 - 3(272-2(119))\\
+				&= 7(119)-3(272)
+		\end{align*}
+	Thus, $ x=7 $ and $ y= -3 $.
+	\item[2.4.4c] Assuming that $ \gcd(a,b)=1 $, prove the following: $ \gcd(a+b,a^2+b^2)=1 $ or 2.\\
+		\begin{proof}
+			Let $ d=\gcd(a,b)=1 $. Then, $ \gcd(a,b)=1$ can be written as $ax+by=1$.
+				\[(2a)x+(2b)y=2\]
+			Then, $ d|2 \Rightarrow d = 1$ or 2.
+			Therefore,  $ \gcd(a+b,a^2+b^2)=1 $ or 2.
+		\end{proof}
+	\item[2.4.6] Prove that if $ \gcd(a,b)=1, $ then $ \gcd(a+b,ab)=1 $
+		\begin{proof}
+			Let $ \gcd(a,b)=1 $. Then, $ \gcd(a,b)=1$ can be written as $ax+by=1$. Squaring both sides yields in \[a^2x^2+2abxy+b^2y^2=1\].
+			Notice. 
+				\[a^2x^2+2abxy+b^2y^2=ab(2xy-x^2-y^2)+(a+b)(ax^2+by^2)\]
+				This can be rewritten as,
+				\[ab(x)+(a+b)(y)\]
+				Therefore, $ \gcd(a+b,ab)=1 $
+		\end{proof}
+        
+\end{enumerate}
+
+\end{document}
