@@ -16,7 +16,7 @@
 
 %\parindent 0pt
 
-\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#04}
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#05}
 \rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
 
 \newcommand{\C}{\mathds{C}}
@@ -28,51 +28,76 @@
 
 \begin{document}
 \begin{enumerate}
-	\item[2.4.2b] Use the Euclidean Algorithm to obtain integers $ x $ and $ y $ that satisfy $\gcd(24,138)=24x+138y$\\
-	Using the Euclidean Algorithm, observe.
-		\begin{align*}
-			138 &= 5(24)+18\\
-			24 &= 1(18)+6\\
-			18 &= 3(6)+0
-		\end{align*}
-		Working these results in reverse, notice.
-		\begin{align*}
-			6 &= 24 - 18(1)\\
-			  &= 24 - 24(138-15)\\
-			  &= 6(24)-1(138)
-		\end{align*}
-		Thus, $ x=6 $ and $ y= -1 $.
-	\item[2.4.2c] Use the Euclidean Algorithm to obtain integers $ x $ and $ y $ that satisfy $\gcd(119,272)=119x+272y$\\	
-		Using the Euclidean Algorithm, observe.
-		\begin{align*}
-			272 &= 2(119)+34\\
-			119 &= 3(34)+17\\
-			34 &= 2(17)+0
-		\end{align*}
-		Working these results in reverse, notice.
-		\begin{align*}
-			 17	&= 119 - 3(34)\\
-				&= 119 - 3(272-2(119))\\
-				&= 7(119)-3(272)
-		\end{align*}
-	Thus, $ x=7 $ and $ y= -3 $.
-	\item[2.4.4c] Assuming that $ \gcd(a,b)=1 $, prove the following: $ \gcd(a+b,a^2+b^2)=1 $ or 2.\\
-		\begin{proof}
-			Let $ d=\gcd(a,b)=1 $. Then, $ \gcd(a,b)=1$ can be written as $ax+by=1$.
-				\[(2a)x+(2b)y=2\]
-			Then, $ d|2 \Rightarrow d = 1$ or 2.
-			Therefore,  $ \gcd(a+b,a^2+b^2)=1 $ or 2.
-		\end{proof}
-	\item[2.4.6] Prove that if $ \gcd(a,b)=1, $ then $ \gcd(a+b,ab)=1 $
-		\begin{proof}
-			Let $ \gcd(a,b)=1 $. Then, $ \gcd(a,b)=1$ can be written as $ax+by=1$. Squaring both sides yields in \[a^2x^2+2abxy+b^2y^2=1\].
-			Notice. 
-				\[a^2x^2+2abxy+b^2y^2=ab(2xy-x^2-y^2)+(a+b)(ax^2+by^2)\]
-				This can be rewritten as,
-				\[ab(x)+(a+b)(y)\]
-				Therefore, $ \gcd(a+b,ab)=1 $
-		\end{proof}
-        
+	\item[2.5.2b] Determine all solutions in the integers of the following Diophantine equations. $ 24x+138y=18 $
+        \begin{align*}
+        	138 &= 5(24) + 18\\
+        	24  &= 1(18) + 6\\
+        	18  &= 3(6)+0\\
+        	\gcd(138,24) &= 6
+        \end{align*}
+        Then,
+        \begin{align*}
+	        6 &= 24-18\cdot 1\\
+	          &= 24-1(138-5(24))\\
+	          &= 6(24) - 1(138)\\
+	       18 &= 18(24)-3(138)  
+        \end{align*}
+        So $ x_0 = 18 $ and $ y_0 = -3 $. Therefore, $ x=18+23t $ and $ y=-3-4t , t\in\Z$
+    \item[2.5.3b] Determine all solutions in the positive integers of the following Diophantine. $ 54x+21y=906 $
+    \begin{align*}
+    	54 &= 2(21)+12\\
+    	21 &= 1(12)+9\\
+    	12 &= 1(9)+3\\
+    	9 &= 3(3)+0\\
+    	\gcd(54,21)&=3
+    \end{align*}
+    Then,
+    \begin{align*}
+	    3 &= 12-9\\
+	      &= 12-(21-12)\\
+	      &= 12-(21-(54-2(21)))\\
+	      &= 2(54)-3(21)\\
+	  906 &= 604(54)-1510(21)
+    \end{align*}
+    As we are looking for only positive solutions, $ x_0 = 16 $ and $ y_0 = 2 $. Therefore, $ x=16+7t $ and $ y=2-18t , t\in\Z$
+    \item[2.5.5b] The neighborhood theater charges $\$1.80$ for adult admissions and $ \$.75 $ for children. On a particular evening the total receipts were $ \$90 $. Assuming that more adults than children were present, how many people attended?\\
+    The problem can be simplified to $ 1.80x + .75y = 90 $. Then multiplying by 10,
+    \begin{align*}
+	    180x + 75y &= 9000\\
+	    12x + 5y &= 600\\
+    \end{align*}
+    Finding the $ \gcd(12,5) $
+    \begin{align*}
+	    12 &= 2(5) + 2\\
+	    5  &= 2(2) + 1\\
+	    2  &= 2(1) + 0\\
+	    \gcd(12,5) &= 1
+    \end{align*}
+    Then,
+    \begin{align*}
+    	1 &= 5 - 2(2)\\
+    	  &= 5 - 2(12-2(5))\\
+    	  &= 5 - 2(12) + 4(5)\\
+    	  &= 5(5) - 2(12)\\
+      600 &= 3000(5)-1200(12)
+    \end{align*}
+    So, $ x_0 = 30 $ and $ y_0 = 12 $. Therefore, $ x=30+5t $ and $ y=12-2t ,t\in\Z $
+    \item[2.5.8e] Euler, 1770. Divide 100 into two summands such that one is divisible by 7 and the other by 11.\\
+    Suppose that $ x+y=100 $ with $ \frac{x}{7} = k $ and $ \frac{y}{11}=j $. Then, $ 7j+11k=100 $.
+    \begin{align*}
+	    11 &= 1(7) + 4\\
+	    7  &= 1(4) + 3\\
+	    4  &= 1(3) + 1\\
+	    3  &= 3(1) + 0	    
+    \end{align*}
+    Then,
+    \begin{align*}
+	    1 &= 4-(7-4)\\
+	      &= 4-(7-11-1(7))\\
+	      &= 7(-3) + 11(2)\\
+	  100 &= 7(-300) + 11(200)
+    \end{align*}
+    So, $ x_0 = -300 $ and $ y_0=200 $. Thus, $ x=-300-11t $ and $ y=200+7t, t\in\Z $. As we're only looking for positive solutions, let $ t= 28 $. Therefore, $ 100 = 7(8)+11(4) = 56+44 $
 \end{enumerate}
 
 \end{document}
