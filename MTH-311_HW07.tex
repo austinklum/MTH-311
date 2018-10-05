@@ -1,0 +1,63 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#07}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[3.2.03] Given that $ p \not | n $ for all primes $ p \leq \sqrt[3]{n} $, show that $ n > 1 $ is either prime or the product of two primes.
+		\begin{proof}
+			By way of contradiction, let us assume $ n=p_1p_2\cdots p_k , k\geq3$ The first three prime factors are $ p_1,p_2,p_3 $. Then, $ p_1 | n , p_2|n, $ and $ p_3|n \Rightarrow p_1p_2p_3|n\Rightarrow p\geq p_1p_2p_3$.
+			Since $ p\not|n $ for all $ p\leq \sqrt[3]{n} $. Then, $ p_1>\sqrt[3]{n},p_2>\sqrt[3]{n} $, and $ p_3>\sqrt[3]{n} $. Thus, $ p_1p_2p_3>n $ is a contradiction.\\
+			Therefore $ n>1 $ is either a prime of the product of two primes.
+		\end{proof}
+	\item[3.2.05] Show that any composite three-digit number must have a prime factor less than or equal to 31.
+	\begin{proof}
+		Let $ n $ be a composite three-digit number. Then $ n \leq 999 $. As $ n $ is composite, there must exist a $ p $ where $ p \not = n $, $ p|n $ and $ p\leq \sqrt{n}\Rightarrow p\leq\sqrt{999} \Rightarrow p\leq 31 $\\
+		Therefore, any composite three-digit number must have a prime factor less than or equal to 31.
+	\end{proof}
+	
+	\item[3.2.9a] Prove that if $ n >2 $, then there exists a prime $ p $ satisfying $ n < p <n! $.
+		\begin{proof}
+			Let $ n > 2 $. Using the hint given, if $ (n! - 1)  $ is prime, then the statement is satisfied. \\
+			Else, $ (n! - 1) $ is composite and thus has a prime divisor $ p $ with $ p\leq n \Rightarrow p|n! \text{ and } p|(n!-1) \Rightarrow p|(n!-(n!-1))=1 \Rightarrow p > n$. But $ p > n $ is a contradiction. \\
+			Therefore, if $ n >2 $, then there exists a prime $ p $ satisfying $ n < p <n! $
+		\end{proof}
+	\item[3.2.9b] For $ n > 1 $, show that every prime divisor of $ n! + 1 $ is an odd integer that is greater than $ n $.
+	\begin{proof}
+		Let $ n > 1 $. Then,
+		\begin{align*}
+			n! + 1 &= n(n-1)(n-2)\cdots 3 \cdot 2 \cdot 1 + 1\\
+				   &= 2n(n-1)(n-2)\cdots 3 + 1\\
+				   &\text{ let } m:=n(n-1)(n-2)\cdots 3 \\
+				   &= 2m+1
+		\end{align*}
+		Thus, $ 2m+1 $ is odd and greater than $ n $.
+		Therefore,  For $ n > 1 $, every prime divisor of $ n! + 1 $ is an odd integer that is greater than $ n $
+	\end{proof}
+\end{enumerate}
+
+\end{document}
