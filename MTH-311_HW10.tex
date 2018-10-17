@@ -1,0 +1,48 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#09}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[4.3.7d] Establish the following divisibility criteria, an integer is divisible by 5 if and only if its units digit is 0 or 5
+		  \begin{proof}
+		  	Let $ N = a_m10^m+....a_110+a_0 , x,m\in\Z$. Notice $ 10 \equiv 0 $ (mod 5). Then, for some $ j\in\Z^+ 10^j  \equiv 0$ (mod 5). 
+		  	\begin{align*}
+		  		N& \equiv a_m0^m+....a_1x0+a_0 
+		  		 & a_0 \text{ (mod 5)}
+		  	\end{align*}
+		  	Therefore, $ N $ is divisible by 5 if its last digit is 0 or 5
+		  \end{proof}
+	\item[4.3.11] Assuming 495 divides $273x49y5$, obtain the digits $ x $ and $ y $.
+	
+	\item[4.3.16] Show that $ 2^n $ divides an integer $ N $ if and only if $ 2^n $ divides the number made of the last $ n $ digits of $ N $.
+	
+	\item[4.3.28] When printing the ISBN $ a_1a_2\cdots a_9 $, two unequal digits were transposed. Show that the check digits detected this errors.
+	
+\end{enumerate}
+
+\end{document}
