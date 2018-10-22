@@ -29,14 +29,85 @@
 \begin{document}
 \begin{enumerate}
 	\item[4.4.1b] Solve the linear congruence, $ 5x\equiv 2 $ (mod 26)
-	
-	\item[4.4.4c] Solve the following sets of simultaneous congruences, \\$ x \equiv 5 $ (mod 6),\\$ x \equiv 4 $ (mod 11),\\$ x \equiv 3 $ (mod 17)
-	
+	\begin{align*}
+		5x-26y&=2\\
+		5(-10)-26(-2)&=2
+	\end{align*}
+	Thus, $ x_0 = -10 $\\
+	$ x = -10 - 26(0) $, as gcd = 1\\
+	Thus, \begin{align*}
+		x &\equiv -10 \text { (mod 26)}\\
+		  &\equiv 16 \text{ (mod 26)}
+	\end{align*}
+	\item[4.4.4c] Solve the following sets of simultaneous congruences, \\$ x \equiv 5 $ (mod 6),\\$ x \equiv 4 $ (mod 11),\\$ x \equiv 3 $ (mod 17) \\
+	$ n_k = 6\cdot11\cdot17=1122 $
+	\[	N_1 = 187,
+		N_2 = 102,
+		N_3 = 66\]
+	\begin{align*}
+		187x&\equiv 1 \text{ (mod 6)} & 102x&\equiv 1 \text{ (mod 11)} & 66x&\equiv 1 \text{ (mod 17)}\\
+		186x+1x&\equiv 1 \text{ (mod 6)} & 99x+3x&\equiv 1 \text{ (mod 11)} & 		51x+15x&\equiv 1 \text{ (mod 17)}\\
+		1x&\equiv 1 \text{ (mod 6)} & 3x&\equiv 1 \text{ (mod 11)} & 15x&\equiv 1 \text{ (mod 17)}\\
+		x_1 &= 1 & x_2 &= 4 & x_3 &= 8
+	\end{align*}
+	\begin{align*}
+	\bar{x} &= 187\cdot 5\cdot 1 + 102\cdot 4\cdot 4 + 66\cdot 3 \cdot 8\\
+		   &= 935 + 1632 + 1584\\
+		   &= 4141
+	\end{align*}
+	\begin{align*}
+		\bar{x} &\equiv 4151 \text{ mod(1122)}\\
+				&\equiv 785 \text { mod(1122)}
+	\end{align*}
 	\item[4.4.10] A band of 17 pirates stole a sack of gold coins. When they tried to divide the fortune into equal portions, 3 coins remained. In the ensuing brawl over who should get the extra coins, one pirate was killed. The wealth was redistributed, nut this time an equal division left 10 coins. Again an argument developed in which another pirate was killed. But now the total fortune was evenly distributed among the survivors. What was the least number of coins that could have been stolen?
-	
+		$ n_k = 17\cdot16\cdot15=4080 $
+	\[	N_1 = 240,
+	N_2 = 255,
+	N_3 = 272\]
+	\begin{align*}
+	240x&\equiv 1 \text{ (mod 17)} & 255x&\equiv 1 \text{ (mod 16)} & 272x&\equiv 1 \text{ (mod 15)}\\
+	2x&\equiv 1 \text{ (mod 17)} & 15x&\equiv 1 \text{ (mod 16)} & 2x&\equiv 1 \text{ (mod 15)}\\
+	x&\equiv 9 \text{ (mod 17)} & x&\equiv 15 \text{ (mod 16)} & x&\equiv 8\text{ (mod 15)}\\
+	x_1 &= 9 & x_2 &= 15 & x_3 &= 8
+	\end{align*}
+	\begin{align*}
+	\bar{x} &= 240\cdot 3\cdot 9 + 255\cdot 10\cdot 15 + 272\cdot 0 \cdot 8\\
+	&= 6480 + 38250 + 0\\
+	&= 44730
+	\end{align*}
+	\begin{align*}
+	\bar{x} &\equiv 44730 \text{ mod(4080)}\\
+	&\equiv 3930 \text { mod(4080)}
+	\end{align*}
+	3930 stolen coins!
 	\item[4.4.13] If $ x\equiv a$ (mod $ n $), prove that either $ x \equiv a$ (mod $ 2n $) or $ x \equiv a+n $ (mode $ 2n $)
-		
-	\item[4.4.20a] Find the solutions of the following system of congruences, \\ $ 5x+3y \equiv $ (mod 7) \\ $ 3x+2y \equiv 4 $ (mod 7)
+		\begin{proof}
+			Let $ x \equiv a $ (mod $ n $) Then, $ x=a+kn $ for $ k\in\Z $\
+			\begin{enumerate}
+				\item [$ k $ is even] Then, $ k=2l $ for $ l\in\Z $ 
+					\[x=a+2ln \Rightarrow x\equiv a \text{ (mod 2n)}\]
+				\item [$ k $ is odd] Then, $ k=2l +1 $ for $ l\in\Z $ 
+				\[x=a+(2l+1)n = a + n + l2n \Rightarrow x\equiv a + n \text{ (mod 2n)}\]
+			\end{enumerate}
+		Therefore, if $ x\equiv a$ (mod $ n $), either $ x \equiv a$ (mod $ 2n $) or $ x \equiv a+n $ (mode $ 2n $)
+		\end{proof}
+	\item[4.4.20a] Find the solutions of the following system of congruences, \\ $ 5x+3y \equiv 1 $ (mod 7) \\ $ 3x+2y \equiv 4 $ (mod 7)\\
+	Solving for $ y $.
+	\begin{align*}
+		15x+9y &= 3 \\
+		15x+10y &= 20 
+	\end{align*}
+	$ y \equiv 17 $ (mod 7) \\
+	$ y \equiv 3 $ (mod 7)\\
+	\\
+	Solving for $ x $.
+		\begin{align*}
+	10x+6y &= 2 \\
+	9x+6y &= 12 
+	\end{align*}
+	$ x \equiv -10 $ (mod 7) \\
+	$ x \equiv 4 $ (mod 7)\\
+	Thus $ x = 4 , y = 3 $
 \end{enumerate}
 
 \end{document}
