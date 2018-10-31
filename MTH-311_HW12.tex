@@ -1,0 +1,89 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#12}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[5.2.03] From Fermat's theorem deduce that, for any integer $ n\geq0, 13 | 11^{12n+6}+1 $.
+	\begin{proof}
+		As $ 13 \not| 11 , 11^{12} \equiv 1 $ (mod 13), by Fermat's Theorem. Then
+		\begin{align*}
+			11^{12n+6}+1 &\equiv (11^{12})^n\cdot 11^6+1 \text{ (mod 13)}\\
+						 &\equiv 1^n\cdot(-2)^6+1 \text{ (mod 13)}\\
+						 &\equiv 65\text{ (mod 13)}\\
+						 &\equiv 0 \text{ (mod 13)}
+		\end{align*}
+		Therefore, $  13 | 11^{12n+6}+1 $
+	\end{proof}
+	\item[5.2.4d] Derive the following congruence: $ a^9 \equiv a $ (mod 30) for all $ a $. \\
+	Note, $ 30 = 2\cdot 3 \cdot 5 $. Then, using Fermat's Theorem,
+	\[a^9\equiv (a^2)^4\cdot a \equiv a^5\equiv a^3 \equiv a^2 \equiv a \text{ (mod 2)} \]
+	\[a^9\equiv (a^3)^3 \equiv a^3 \equiv a \text{ (mod 3)} \]
+	\[a^9\equiv a^5\cdot a^4 \equiv a^5 \equiv a \text{ (mod 5)} \]
+	Thus, $ a^9 \equiv a $ (mod $ 2\cdot3\cdot5 $)\\
+	Therefore, $ a^9 \equiv a $ (mod 30) for all $ a $.
+	\item[5.2.13] Assume that $ p $ and $ q $ are distinct odd primes such that $ p-1|q-1 $. If $ \gcd(a,pq)=1 $, show that $ a^{q-1} \equiv 1 $ (mod $ pq $)
+	\begin{proof}
+		As $ \gcd(a,pq)=1,  $ then $ \gcd(a,p)= 1 $ and $ \gcd(a,q)=1 $
+		Then, $ a^{p-1}\equiv 1 $ (mod $ p $) and $ a^{q-1}\equiv $ (mod $ p $)\\
+		As, $ p-1|q-1 $ then $ q-1 = k(p-1)$ for some $ k$. Thus, 
+		\[a^{q-1}\equiv(a^{p-1})^k\equiv1^k\equiv1\text{ (mod $ p $)} \]
+		Thus, $ a^{q-1}\equiv 1 \text{ (mod $ p $) }$\\
+		Therefore, $ a^{q-1} \equiv 1 $ (mod $ pq $)
+	\end{proof}
+	
+	
+	
+	\item[5.2.20a] Show that $ 561 | 2^{561}-2 $.\\
+		Note, 561 = $3\cdot11\cdot17 $. \\
+		Then, by Fermat's Theorem, 
+		\[2^{3-1} = 2^2 \equiv 1 \text{ (mod 3)} \] 
+		\[2^{11-1} = 2^{10} \equiv 1 \text{ (mod 11)} \] 
+		\[2^{17-1} = 2^{16} \equiv 1 \text{ (mod 17)} \] 
+		We then have,
+			\[2^{561} = (2^2)^{280}\cdot 2 \equiv 2 \text{ (mod 3)}\]
+			\[2^{561} = (2^{10})^{56}\cdot 2 \equiv 2 \text{ (mod 11)}\]
+			\[2^{561} = (2^{16})^{35}\cdot 2 \equiv 2 \text{ (mod 17)}\]
+		Thus,
+			\[2^{561}\equiv 2\text{ (mod $3 \cdot 11 \cdot 17$)}\]
+		Therefore,
+			$ 561 | 2^{561}-2 $
+	\item[5.2.20b] Show that $ 561 | 3^{561}-3 $.\\
+		Note, 561 = $3\cdot11\cdot17 $. \\
+		Then, by Fermat's Theorem, 
+		\[3^{11-1} = 3^{10} \equiv 1 \text{ (mod 11)} \] 
+		\[3^{17-1} = 3^{16} \equiv 1 \text{ (mod 17)} \] 
+		We then have,
+			\[3^{561} = (3^{10})^{56}\cdot 3 \equiv 3 \text{ (mod 11)}\]
+			\[3^{561} = (3^{16})^{35}\cdot 3 \equiv 3 \text{ (mod 17)}\]
+		Thus,
+			\[3^{561}\equiv 3\text{ (mod $3 \cdot 11 \cdot 17$)}\]
+		Therefore,
+			$ 561 | 3^{561}-3 $
+\end{enumerate}
+
+\end{document}
