@@ -1,0 +1,68 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#16}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[7.3.02] Use Euler's theorem to confirm that, for any integer $ n \geq 0 $,
+	\[51|10^{32n+9}-7\]
+	Since, $ 51 = 17\cdot3$ we have $ \phi(51)=\phi(17)\phi(3)=16\cdot2=32 $. By Euler's theorem we have $ 10^{32} \equiv 1 $ (mod 51). Notice,
+		\[10^{32n+9}-7 = 10^{32n}\cdot10^9-7 = 1^n \cdot 10^9-7=10^9-7\equiv0 \text{ (mod 51)}\]
+	Then observe the following. 
+	\begin{align*}
+		10^9=(10^3)^3 &= 1000^3 \\
+			&\equiv 31^3 \text{ (mod 51)}\\
+			&\equiv 29791 \text{ (mod 51)}\\
+	    	&\equiv 7 \text{ (mod 51)}
+	\end{align*}
+	Thus, we have $ 10^9 \equiv 7 $ (mod 51).\\
+	Therefore, $51|10^{32n+9}-7$
+		
+	\item[7.3.05] If $ m $ and $ n $ are relatively prime positive integers, prove that
+	\[m^{\phi(n)}+n^{\phi(m)}\equiv 1 \text{ (mod $mn  $)} \]
+		By Euler's Theorem, we have $ m^{\phi(n)}\equiv1 $ (mod $ n $) and $ n^{\phi(m)}\equiv 1 $ (mod $ m $). Also, by Euler's Theorem we get $ m^{\phi(n)} \equiv 0$ (mod $ m $) and $ n^{\phi(m)}\equiv0 $ (mod $ n $). Notice,
+		\[m^{\phi(n)}+n^{\phi(m)}\equiv(1+0)\equiv 1 \text{ (mod $ m $)} \]
+		and
+		\[m^{\phi(n)}+n^{\phi(m)}\equiv(1+0)\equiv 1 \text{ (mod $ m $)} \]
+		Therefore, $m^{\phi(n)}+n^{\phi(m)}\equiv 1 \text{ (mod $mn  $)}$
+	
+	\item[7.3.8a] If $ \gcd(a,n)=1 $, show that the linear congruence $ ax \equiv b$ (mod $ n $) has the solution $ x \equiv ba^{\phi(n)-1} $ (mod $ n $).\\
+	Let $ \gcd(a,n)=1 $. Then by Euler's Theorem we have $ a^{\phi(n)} \equiv 1 $ (mod $n$). Observe. 
+	\begin{align*}
+		 &a^{\phi(n)}  \equiv 1 \text{ (mod $n$)}\\
+		 &\Rightarrow ba^{\phi(n)} \equiv b \text{ (mod $n$)}\\
+		 &\Rightarrow aa^{\phi(n)-1}b \equiv b \text{ (mod $n$)}\\
+		 &\Rightarrow a(^{\phi(n)-1}b) \equiv b \text{ (mod $n$)}\\
+	\end{align*}
+	Thus, the linear congruence $ ax\equiv b $ (mod n) has the solution $ x=ba^{\phi(n)-1} $ (mod n)
+	
+	\item[7.3.10] For any integer $ a $, show that $ a $ and $ a^{4n+1} $ have the same last digit.
+	\\
+	Note if $ a $ is odd and divisible by 5 the last digit of $ a $ is 5.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,89 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#15}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[7.2.4c] $ \phi(3n)=3\phi(n) $ if and only if $ 3|n $
+	\begin{proof}
+		Let $ n = p_1^{k_1}p_2^{k_2} \cdots p_r^{k_r} $\\
+		Assume $ 3|n $. Thus, one of the $ p_i = 3 $ and we can write $ n = 3^km $, where $ m \in \Z^+ $ and $ \gcd(3,m) =1 $. Observe. 
+		\begin{align*}
+			\phi(3n) &= \phi(3^{k+1}m) \\
+					 &= \phi(3^{k+1})\phi(m)\\
+					 &= (3^{k+1}-3^k)\phi(m)\\
+					 &= 3(3^k-3^{k-1})\phi(m)\\
+					 &= 3\phi(3^km)\\
+					 &= 3\phi(n)
+		\end{align*}
+		Thus, if $ 3|n $ then $ \phi(3n)=3\phi(n) $ 
+		\\
+		Going the other way, assume $ \phi(3n)=3\phi(n) $. Suppose $ 3 \not| n $. Then $ \gcd(3,n) =1 $. Notice.
+			\[\phi(3n)=\phi(3)\phi(n)=2\phi(n)\]
+		This contradicts  $ \phi(3n)=3\phi(n) $.\\
+		Thus, if  $ \phi(3n)=3\phi(n) $ then $ 3|n $\\
+		Therefore, $ \phi(3n)=3\phi(n) $ if and only if $ 3|n $
+	\end{proof}
+	\item[7.2.05] Prove that the equation $ \phi(n)=\phi(n+2) $ is satisfied by $ n=2(2p-1) $ whenever $ p $ and $ 2p-1$ are both odd primes.
+		\begin{proof}
+			Assume $ p $ and $ 2p-1 $ are both odd primes. Notice $ \gcd(2,2p-1)=1 $. Then,
+			 \[\phi(n) = \phi(2)\phi(2p-1) = (2p-1)(1-\frac{1}{2p-1}) = 2p-2\]
+			Notice, 
+			\[n+2=2(2p-1)+2=4p\]
+			As $ p $ is a odd prime, $ \gcd(4,p)=1 $
+			\[\phi(n+2) = \phi(4)\phi(p)=2p(1-\frac{1}{p})=2p-2\]
+			Thus, $ \phi(n)=\phi(n+2) $\\
+			Therefore,  the equation $ \phi(n)=\phi(n+2) $ is satisfied by $ n=2(2p-1) $ whenever $ p $ and $ 2p-1$ are both odd primes.
+		\end{proof}
+	\item[7.2.10] If every prime that divides $ n $ also divides $ m $, establish that $ \phi(nm) = n\phi(m);  $ in particular $ \phi(n^2) = n\phi(n) $ for every positive integer $ n $. 
+	\begin{proof}
+		Let $ p_1,p_2,\cdots,p_r $ be the primes of $ n $ that divide $ m $. Let $ n = p_1^{k_1}\cdots p_r^{k_r} $. Then $ m = p_1^{j_1}\cdots p_r^{j_r}q_1^{m_1}\cdots q_s^{m_s} $ where $ q_i $ is prime and $ q_i \not p_j $. We then have, $ nm = p_1^{k_1+j_1}\cdots p_r^{k_r+j_r}q_1^{m_1}\cdots q_s^{m_s} $. Observe. 
+		\begin{align*}
+			\phi(nm) &=
+			 p_1^{k_1+j_1}\cdots p_r^{k_r+j_r}q_1^{m_1}\cdots q_s^{m_s} (1-\frac{1}{p_1})\cdots(1-\frac{1}{p_r})(1-\frac{1}{q_1})\cdots (1-\frac{1}{q_s})\\
+				&= p_1^{j_1}\cdots
+				 p_r^{j_r}(1-\frac{1}{p_1})\cdots(1-\frac{1}{q_1})\cdots(1-\frac{1}{q_s})p_1^{k_1}\cdots p_r^{k_r}\\
+				&=\phi(m)\cdot p_1^{k_1}\cdots p_r^{k_r}\\
+				&= n \phi(m)
+		\end{align*}
+		Therefore, If every prime that divides $ n $ also divides $ m $, then $ \phi(nm) = n\phi(m)$
+	\end{proof}
+	\item[7.2.20] If $ p $ is a prime and $ k\geq2 $, show that $ \phi(\phi(p^k))=p^{k-2}\phi((p-1)^2) $
+	\begin{proof}
+		Let $ p $ be a prime and $ k\geq 2 $. Notice, $ \phi(\phi(p^k))=p^{k-1}(p-1) $. Since $ \gcd(p,p-1)=1 \Rightarrow \gcd(p^{k_1},p-1)=1 $. As $ phi $ is multiplicative, notice. 
+			\begin{align*}
+			 	\phi(\phi(p^k)) &= \phi(p^{k-1}(p-1))\\
+			 					&= \phi(p^{k-1})\phi(p-1)\\
+			 					&= p^{k-2}(p-1)\phi(p-1)\\
+			 				&\text{ By the previous problem. We have $ \phi(n^2)=n\phi(n) $ i.e $ (p-1)\phi(p-1) = \phi((p-1)^2) $ }\\
+			 					&=p^{k-2}\phi((p-1)^2)
+			\end{align*}
+			Therefore, if $ p $ is a prime and $ k\geq2 $, $ \phi(\phi(p^k))=p^{k-2}\phi((p-1)^2)$
+	\end{proof}
+\end{enumerate}
+
+\end{document}
