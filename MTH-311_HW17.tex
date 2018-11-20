@@ -1,0 +1,59 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#17}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[8.1.2b] If $ a $ has order $ 2k $ modulo the odd prime $ p $, then $ a^k \equiv -1 $ (mod $ p $)
+		\begin{proof}
+			Let $ p $ be an odd prime and $ a^{2k} \equiv 1$ (mod p). Notice, 
+			\[(a^k)^2-1 \equiv 0 \text{ (mod $ p $)}\Rightarrow (a^k-1)(a^k+1)\equiv 0 \text{ (mod p)}\]
+			Then, $ p | (a^k-1)(a^k+1) \Rightarrow p|(a^k+1)$. So, $ a^k\equiv -1 $ (mod $ p $)\\
+			Therefore, If $ a $ has order $ 2k $ modulo the odd prime $ p $, then $ a^k \equiv -1 $ (mod $ p $)
+		\end{proof}
+	\item[8.1.8a] Prove that if $ p $ and $ q $ are odd primes and $ q|a^p-1 $, then either $ q|a-1 $ or else $ q=2kp+1 $ for some integer $ k $.
+	\begin{proof}
+		Let $ p $ and $ q $ be odd primes and $ q|a^p-1 $ Note, $ \gcd(a,q)=1 $ and $ a^p\equiv 1 $ (mod $ q $). Let $ r $ be the order of $ a $ modulo $ q $. Then, $ r|p $. As $ p $ is prime, we have $ r=1 $ or $ r=p $.
+		If $ r =1 $, we have $ a\equiv 1 $ (mod $ q $) $ \Rightarrow q|(a-1) $\\
+		If $ r=p $, we have $ a^{\phi(q)} \equiv 1 $ (mod $ q $). Then, $ p|\phi(q) \Rightarrow p|q-1 $. There must be some $ m $ such that $ pm=q-1 $. As $ q $ is odd, $ q-1 $ must be even, and as $ p $ is odd, $ m $ must be even, so $ m=2k $ for some $ k\in\Z $.\\
+		Thus, $ p(2k)=q-1 \Rightarrow q=2pk+1 $. \\
+		Therefore,  if $ p $ and $ q $ are odd primes and $ q|a^p-1 $, then either $ q|a-1 $ or else $ q=2kp+1 $ for some integer $ k $
+	\end{proof} 
+	\item[8.1.10] Let $ r $ be a primitive root of the integer $ n $. Prove that $ r^k $ is a primitive root of $ n $ if and only if $ \gcd(k,\phi(n))= 1 $.
+	\begin{proof}
+		As $ r $ has order $ \phi(n) $ (mod $ n $), we then have $ r^k $ has order $ \phi(n)/ \gcd(k,\phi(n)) $. \\
+		\\
+		Assume $ \gcd(k,\phi(n))=1 $ then $ r^k $ has order $ \phi(n) $.\\
+		Thus, $ r^k $ is a primitive root of $ n $\\
+		\\
+		Suppose $ r^k $ is a primitive root of $ n $. Then $ r^k $ has order $ \phi(n) $.As $ \phi(n) $ is $ \phi(n)/\gcd(k,\phi(n))$. \\
+		Thus, $ \gcd(k,\phi(n))=1 $.\\
+		\\
+		Therefore, $ r^k $ is a primitive root of $ n $ if and only if $ \gcd(k,\phi(n))= 1 $.
+	\end{proof}
+\end{enumerate}
+\end{document}

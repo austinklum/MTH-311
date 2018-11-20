@@ -59,10 +59,15 @@
 		 &\Rightarrow a(^{\phi(n)-1}b) \equiv b \text{ (mod $n$)}\\
 	\end{align*}
 	Thus, the linear congruence $ ax\equiv b $ (mod n) has the solution $ x=ba^{\phi(n)-1} $ (mod n)
-	
 	\item[7.3.10] For any integer $ a $, show that $ a $ and $ a^{4n+1} $ have the same last digit.
 	\\
-	Note if $ a $ is odd and divisible by 5 the last digit of $ a $ is 5.
+	If $ \gcd(a,10)=1 $, then $ a^{\phi(10)}\equiv1 $ (mod 10). Thus, as $ \phi(10) = 4$, we have $ a^4\equiv 1 $ (mod 10). Then we have $ a^{4n}\equiv 1 $ (mod 10) and $ a^{4n+1}\equiv a $ (mod 10) \\
+	Notice, then
+	 \[a^{4n+1}\equiv a\text{ (mod 2)}\]
+	 	is true , because it is obviously true for $ a\equiv0 $ (mod 2) and $ a\equiv 1 $ (mod 2)
+	\\
+	Suppose $ \gcd(a,5) = 1$. Then by Fermat's Theorem, $ a^4\equiv 1 $ (mod 5). Then $ a^{4n+1}=(a^4)^n\cdot a \equiv a $ (mod 5). Thus, $ a^{4n+1}\equiv a $ (mod 5) \\
+	\\
+	Therefore, for any integer $ a $, $ a $ and $ a^{4n+1} $ have the same last digit
 \end{enumerate}
-
 \end{document}
