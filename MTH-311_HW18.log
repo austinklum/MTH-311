@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.4.24)  20 NOV 2018 09:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.4.24)  23 NOV 2018 17:51
 entering extended mode
 **./MTH-311_HW18.tex
 (MTH-311_HW18.tex
@@ -152,6 +152,11 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 (D:\Programs\MiKTeX2.9.6520\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 48.
+
+(D:\Programs\MiKTeX2.9.6520\tex\latex\doublestroke\udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 14.49998pt.
@@ -163,23 +168,25 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 ]
 (MTH-311_HW18.aux) ) 
 Here is how much of TeX's memory you used:
- 1357 strings out of 493312
- 15585 string characters out of 3139339
- 69696 words of memory out of 3000000
- 4925 multiletter control sequences out of 15000+200000
- 8910 words of font info for 36 fonts, out of 3000000 for 9000
+ 1377 strings out of 493312
+ 15903 string characters out of 3139339
+ 75696 words of memory out of 3000000
+ 4936 multiletter control sequences out of 15000+200000
+ 10296 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,43p,322b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Programs/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb><D:/Programs/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><D:/Programs/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Progr
-ams/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Programs/MiKTeX2
-.9.6520/fonts/type1/public/amsfonts/cm/cmss12.pfb><D:/Programs/MiKTeX2.9.6520/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programs/MiKTeX2.9.6520/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb>
-Output written on MTH-311_HW18.pdf (1 page, 67961 bytes).
+ 28i,13n,43p,352b,238s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Austin Klum\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\public\doublestroke\dpi600\dsrom12.pk><D:/Programs/MiKTeX2.9.6520/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><D:/Programs/MiKTeX2.9.6520/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb><D:/Programs/MiKTeX2.9.6520/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><D:/Programs/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmr8.p
+fb><D:/Programs/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmss12.pfb><D:/Pr
+ograms/MiKTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programs/Mi
+KTeX2.9.6520/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Programs/MiKTeX2.9.65
+20/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on MTH-311_HW18.pdf (1 page, 83889 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 43 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
