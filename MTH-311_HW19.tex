@@ -1,0 +1,77 @@
+%This is a Latex file.
+\documentclass[12pt]{article}
+\usepackage{latexsym,fancyhdr,amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amssymb}
+
+% margins are relative to the default of 1 in
+%\topmargin       -0.2 in
+
+\topmargin        -0.2 in
+\textheight       8.4 in
+\oddsidemargin    0 in     % this is for pages 1, 3, 5, ...
+\evensidemargin   0 in     % and this for 2, 4, 6, ...
+\textwidth        6.5 in
+\headheight       0 in     % we won't have a running head, nor
+\headsep          .35 in     % any extra space between head and text
+
+%\parindent 0pt
+
+\pagestyle{fancy} \lhead{\sf MTH 311} \chead{\sf Homework \#19}
+\rhead{\sf Austin Klum} \lfoot{} \cfoot{} \rfoot{}
+
+\newcommand{\C}{\mathds{C}}
+\newcommand{\I}{\mathds{I}}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Q}{\mathds{Q}}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\Z}{\mathds{Z}}
+
+\begin{document}
+\begin{enumerate}
+	\item[9.1.1b] Solve the quadratic congruence $3x^2+9x+7\equiv0 \pmod{13}  $\\
+	Observe.
+	\begin{align*}
+		(6x^2+9)^2 &\equiv 81-12(7) \pmod{13}\\
+				   &\equiv -3 \pmod{13}\\	
+				   &\equiv 10 \pmod{13}	
+	\end{align*}
+	Let $ y=6x^2+9 $. Then we have,
+	 \[y^2 \equiv 10 \pmod{13} \Rightarrow y^2-10\equiv 0 \pmod{13}\Rightarrow y^2-36\equiv0\pmod{13}\]
+	Thus, $ y=6 \pmod{13}$ or $ y=7 \pmod{13}$
+	\begin{align*}
+		6x+9 &\equiv 6 \pmod{13} &	6x+9 &\equiv 7 \pmod{13}\\
+		6x &\equiv -3 \pmod{13}	&	6x &\equiv -2 \pmod{13}\\
+		6x &\equiv 36 \pmod{13}	&	12x &\equiv -4 \pmod{13}\\
+		x &\equiv 6 \pmod{13}	&	x &\equiv 4 \pmod{13}
+	\end{align*}
+	Thus,	$x \equiv 4 \pmod{13}$ or $x \equiv 6 \pmod{13}$
+	\item[9.1.04] Show that 3 is a quadratic residue of 23, but a non-residue of 31.\\
+	Observe.
+	\begin{align*}
+		3^{(23-1)/2}=3^{11}=3^2(3^3)^3=9(27)^3 &\equiv 9(4)^3 \pmod{23}\\
+											   &\equiv 9(64) \pmod{23}\\
+											   &\equiv 9(-5) \pmod{23}\\
+											   &\equiv -45 + 46 \pmod{23}\\
+											   & \equiv 1 \pmod{23}
+	\end{align*}
+	Thus, 	$ 	3^{(23-1)/2} \equiv \pmod{23} \Rightarrow 3 $ is a quadratic residue of $ 23 $\\
+	Observe.
+	\begin{align*}
+			3^{(31-1)/2}=3^{15}=(3^3)^5=(27)^5      &\equiv (-4)^5 \pmod{31}\\
+													&\equiv -4^3\cdot-4^2 \pmod{31}\\
+													&\equiv 16(-64) \pmod{31}\\
+													&\equiv 16(-64+62) \pmod{31}\\
+													&\equiv -32 \pmod{31}\\
+													& \equiv -1 \pmod{31}
+	\end{align*}
+	Thus, $3^{(31-1)/2}\equiv-1 \pmod{31} \Rightarrow 3 $ is a quadratic non-residue of 31
+	\item[9.1.07] If $ p=2^k+1 $ is prime, verify that every quadratic non-residue of $ p $ is a primitive root of $ p $.\\
+	Let $ a $ be a quadratic non-residue of $ p $. Then by Euler's Criterion for some $ k\in \Z^+ $,
+		\[a^{(p-1)/2}=a^{2^{k-1}}\equiv-1 \pmod p \]
+		\[\Rightarrow (a^{2^{k-1}})^2=a^{2^k}\equiv 1 \pmod p \]
+		Let $ n $ be the order of $ a $ modulo $ p $, then $ n|2^k $. Notice if $ n \not= 2^k $, then $ n=2^r $ for $ r<k $. Thus, we have $ a^{2^r} \equiv 1 \pmod p$. If $ r=k-1 $, we then have a contradiction from $ a^{2^{k-1}}\equiv-1 \pmod p $. Otherwise, if $ r < k-1 $, we then get 
+		\[(a^{2^{k-2}})^2=a^{2(2^{k-2})}=a^{2^{k-1}}\equiv 1\pmod p\]
+		Which is a contradiction from  $ a^{2^{k-1}}\equiv-1 \pmod p $.\\
+		Thus, the order of $ a $ must be a primitive root.
+\end{enumerate}
+\end{document}
